@@ -1,20 +1,24 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./Claim.css";
 
 type ClaimProps = {
   text: string;
-  onSupport: () => void;
-  onConclude: () => void;
+  id: number;
+  supports: number[];
+  concludes: number[];
+  conclusionUpdate: (id: number) => void;
 };
 
-const Claim = ({ text, onSupport, onConclude }: ClaimProps) => {
-  const [claim, setClaim] = useState(text);
+const Claim = ({ text, id, supports, concludes, conclusionUpdate }: ClaimProps) => {
   return (
     <>
-      <div className="claim">
-        <button onClick={onSupport}>+</button>
-        <input value={claim} onChange={(e) => setClaim(e.target.value)} />
-        <button onClick={onConclude}>+</button>
+      <div className={`claimContainer ${supports.length ? "supported" : ""} ${concludes.length ? "concludes" : ""}`}>
+        <button>+</button>
+        <div className="claim" onClick={() => conclusionUpdate(id)}>
+          <p>{text}</p>
+          {/* <input value={claim} onChange={(e) => setClaim(e.target.value)} /> */}
+        </div>
+        <button>+</button>
       </div>
     </>
   );

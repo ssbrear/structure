@@ -1,9 +1,33 @@
+.claimContainer {
+  position: relative;
+}
+.claimContainer + .claimContainer::after {
+  content: "";
+  position: absolute;
+  bottom: -37.5px;
+  width: calc(100% + 50px);
+  height: 3px;
+  background-color: var(--accent-color);
+  right: 50%;
+  z-index: -1;
+}
 .claim {
   padding: 20px;
   background-color: var(--surface-color);
   border-radius: 8px;
   box-shadow: var(--card-box-shadow);
   position: relative;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 100%;
+}
+.claim:hover {
+  background-color: var(--accent-color);
 }
 .claim::before,
 .claim::after {
@@ -24,7 +48,7 @@
   transform: translate(-50%, 100%);
 }
 
-.claim button {
+.claimContainer button {
   position: absolute;
   left: 50%;
   border-radius: 50%;
@@ -35,17 +59,17 @@
   font-weight: 700;
   font-size: 1rem;
 }
-.claim button:hover {
+.claimContainer button:hover {
   border-color: var(--secondary-color);
 }
-.claim button:active {
+.claimContainer button:active {
   border-color: var(--accent-color);
 }
-.claim button:first-of-type {
+.claimContainer button:first-of-type {
   top: -37.5px;
   transform: translate(-50%, -50%);
 }
-.claim button:last-of-type {
+.claimContainer button:last-of-type {
   bottom: -37.5px;
   transform: translate(-50%, 50%);
 }

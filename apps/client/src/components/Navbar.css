@@ -1,8 +1,7 @@
 #navbar {
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   background-color: #F4A261;
   height: 100px;
   display: flex;
