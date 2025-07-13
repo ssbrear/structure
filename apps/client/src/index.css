@@ -1,0 +1,38 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --primary-color: #2f5d62;
+  --secondary-color: #4e8098;
+  --accent-color: #f4a261;
+  --surface-color: #e5e7eb;
+  --background-color: #f9fafb;
+  --text-primary-color: #1f2937;
+  --text-secondary-color: #6b7280;
+  --success-color: #2e7d32;
+  --warning-color: #f4b400;
+  --error-color: #d64545;
+
+  --card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  color: var(--text-primary-color);
+  background-color: var(--background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}

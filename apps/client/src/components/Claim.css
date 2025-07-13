@@ -1,0 +1,51 @@
+.claim {
+  padding: 20px;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: var(--card-box-shadow);
+  position: relative;
+}
+.claim::before,
+.claim::after {
+  content: "";
+  height: 75px;
+  width: 3px;
+  position: absolute;
+  left: 50%;
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+.claim::before {
+  top: 0;
+  transform: translate(-50%, -100%);
+}
+.claim::after {
+  bottom: 0;
+  transform: translate(-50%, 100%);
+}
+
+.claim button {
+  position: absolute;
+  left: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  background-color: var(--accent-color);
+  color: var(--text-primary-color);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.claim button:hover {
+  border-color: var(--secondary-color);
+}
+.claim button:active {
+  border-color: var(--accent-color);
+}
+.claim button:first-of-type {
+  top: -37.5px;
+  transform: translate(-50%, -50%);
+}
+.claim button:last-of-type {
+  bottom: -37.5px;
+  transform: translate(-50%, 50%);
+}
