@@ -1,15 +1,9 @@
 .claimContainer {
   position: relative;
+  display: inline-block;
 }
-.claimContainer + .claimContainer::after {
-  content: "";
-  position: absolute;
-  bottom: -37.5px;
-  width: calc(100% + 50px);
-  height: 3px;
-  background-color: var(--accent-color);
-  right: 50%;
-  z-index: -1;
+.claimContainer + .claimContainer {
+  margin-left: 50px;
 }
 .claim {
   padding: 20px;
@@ -29,24 +23,6 @@
 .claim:hover {
   background-color: var(--accent-color);
 }
-.claim::before,
-.claim::after {
-  content: "";
-  height: 75px;
-  width: 3px;
-  position: absolute;
-  left: 50%;
-  background-color: var(--accent-color);
-  z-index: -1;
-}
-.claim::before {
-  top: 0;
-  transform: translate(-50%, -100%);
-}
-.claim::after {
-  bottom: 0;
-  transform: translate(-50%, 100%);
-}
 
 .claimContainer button {
   position: absolute;
@@ -58,6 +34,7 @@
   color: var(--text-primary-color);
   font-weight: 700;
   font-size: 1rem;
+  z-index: 1;
 }
 .claimContainer button:hover {
   border-color: var(--secondary-color);
@@ -72,4 +49,37 @@
 .claimContainer button:last-of-type {
   bottom: -37.5px;
   transform: translate(-50%, 50%);
+}
+
+.node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  z-index: 1;
+  cursor: pointer;
+}
+.node:hover {
+  background-color: var(--primary-color);
+}
+.node.top {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.node.right {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+.node.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.node.left {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

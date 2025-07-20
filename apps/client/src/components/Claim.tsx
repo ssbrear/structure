@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import "./Claim.css";
 
 type ClaimProps = {
@@ -6,21 +5,20 @@ type ClaimProps = {
   id: number;
   supports: number[];
   concludes: number[];
-  conclusionUpdate: (id: number) => void;
 };
 
-const Claim = ({ text, id, supports, concludes, conclusionUpdate }: ClaimProps) => {
+const Claim = ({ text, id, supports, concludes }: ClaimProps) => {
   return (
-    <>
-      <div className={`claimContainer ${supports.length ? "supported" : ""} ${concludes.length ? "concludes" : ""}`}>
-        <button>+</button>
-        <div className="claim" onClick={() => conclusionUpdate(id)}>
-          <p>{text}</p>
-          {/* <input value={claim} onChange={(e) => setClaim(e.target.value)} /> */}
-        </div>
-        <button>+</button>
+    <div
+      id={`claim-${String(id)}`}
+      className={`claimContainer ${supports.length ? "supported" : ""} ${concludes.length ? "concludes" : ""}`}
+    >
+      <span className="node top"></span>
+      <span className="node bottom"></span>
+      <div className="claim">
+        <p>{text}</p>
       </div>
-    </>
+    </div>
   );
 };
 
